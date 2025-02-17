@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .profile-container {
+            width: 450px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        h1 {
+            color: #d63031;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 16px;
+            color: #333;
+            margin: 10px 0;
+        }
+        .action-links a {
+            display: block;
+            margin-top: 10px;
+            color: #d63031;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .action-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <h1>User Profile</h1>
+        <p><strong>Username:</strong> {{ user[1] }}</p>
+        <p><strong>First Name:</strong> {{ user[3] }}</p>
+        <p><strong>Last Name:</strong> {{ user[4] }}</p>
+        <p><strong>Email:</strong> {{ user[5] }}</p>
+        <p><strong>Uploaded File:</strong> {{ user[6] }}</p>
+        <p><strong>Word Count:</strong> {{ user[7] }}</p>
+        <div class="action-links">
+            <a href="/download/{{ user[6] }}">Download Uploaded File</a>
+            <a href="/">Logout</a>
+        </div>
+    </div>
+</body>
+</html>
